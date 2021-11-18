@@ -1,6 +1,7 @@
-import 'package:chief_menu/data/dummy_data.dart';
-import 'package:chief_menu/widgets/category_item.dart';
 import 'package:flutter/material.dart';
+
+import '../data/dummy_data.dart';
+import './category_item.dart';
 
 class CategoriesList extends StatelessWidget {
   const CategoriesList({Key? key}) : super(key: key);
