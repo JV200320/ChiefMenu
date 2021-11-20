@@ -16,26 +16,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chief Menu',
       theme: ThemeData(
-          primarySwatch: Colors.red,
-          canvasColor: Color(0xFF202020),
-          fontFamily: 'Raleway',
-          textTheme: ThemeData.dark().textTheme.copyWith(
-                bodyText1: const TextStyle(
-                  color: Colors.white,
-                ),
-                bodyText2: const TextStyle(
-                  color: Colors.white,
-                ),
-                headline6: const TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'RobotoCondensed',
-                    color: Colors.white),
-              )),
+        primarySwatch: Colors.red,
+        canvasColor: const Color(0xFF202020),
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.dark().textTheme.copyWith(
+              bodyText1: const TextStyle(
+                color: Colors.white,
+              ),
+              bodyText2: const TextStyle(
+                color: Colors.white,
+              ),
+              headline6: const TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'RobotoCondensed',
+                  color: Colors.white),
+            ),
+      ),
       initialRoute: '/',
       routes: {
         '/': (ctx) => const CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => const CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => const MealDetailScreen(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => const CategoriesScreen());
       },
     );
   }
